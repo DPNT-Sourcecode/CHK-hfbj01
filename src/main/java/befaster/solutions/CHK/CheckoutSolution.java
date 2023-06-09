@@ -22,6 +22,7 @@ public class CheckoutSolution {
             else if(ch == 'E') {
                 int frequencyE = frequencyMap.get(ch);
                 freeB = frequencyE / 2;
+                System.out.println(freeB);
                 cost += frequencyE * 40;
             }
             else if(ch == 'A') {
@@ -30,6 +31,7 @@ public class CheckoutSolution {
             }
             else if(ch == 'B') {
                 int discountCost = 45, frequencyB = Math.max(0, frequencyMap.get(ch) - freeB);
+                System.out.println(frequencyB);
                 cost += ((frequencyB / 2) * discountCost) + (frequencyB % 2)*30;
             }
             else return -1;
