@@ -53,5 +53,3 @@ public class SKU {
         return quantity;
     }
 }
-
-
