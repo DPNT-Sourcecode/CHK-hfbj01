@@ -32,7 +32,7 @@ class CheckoutSolutionTest {
     @Test
     public void do_checkout3() {
         Integer response = checkoutSolution.checkout("AAAABBCDDA");
-        Integer expectedResponse = 325;
+        Integer expectedResponse = 295;
         assertEquals(expectedResponse, response);
     }
 
@@ -46,28 +46,28 @@ class CheckoutSolutionTest {
     @Test
     public void do_checkout5() {
         Integer response = checkoutSolution.checkout("AAAABBBCCDDA");
-        Integer expectedResponse = 375;
+        Integer expectedResponse = 345;
         assertEquals(expectedResponse, response);
     }
 
     @Test
     public void do_checkout6() {
         Integer response = checkoutSolution.checkout("AAAABBBCCDDAE");
-        Integer expectedResponse = 415;
+        Integer expectedResponse = 385;
         assertEquals(expectedResponse, response);
     }
 
     @Test
     public void do_checkout7() {
         Integer response = checkoutSolution.checkout("AAAAABBBCCDDEEEEEE");
-        Integer expectedResponse = 540;
+        Integer expectedResponse = 510;
         assertEquals(expectedResponse, response);
     }
 
     @Test
     public void do_checkout8() {
         Integer response = checkoutSolution.checkout("AAAAABBBBBCCDDEEEEEE");
-        Integer expectedResponse = 585;
+        Integer expectedResponse = 555;
         assertEquals(expectedResponse, response);
     }
 
