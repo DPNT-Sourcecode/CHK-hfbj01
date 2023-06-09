@@ -51,10 +51,10 @@ public class CheckoutSolution {
             }
             else if(ch == 'F') {
                 int frequencyF = frequencyMap.get(ch);
-                int freeF = (frequencyF > 2) ? (frequencyF / 2) : 0;
-                int finalFrequencyF = Math.max(0, frequencyF - freeF);
+                int leftF = frequencyF % 3;
+                int fGroups = frequencyF / 3;
 
-                cost += finalFrequencyF * 10;
+                cost += (fGroups * 20) + (leftF * 10);
             }
             else if(ch == 'B') {
                 int discountCost = 45, frequencyB = Math.max(0, frequencyMap.get(ch) - freeB);
