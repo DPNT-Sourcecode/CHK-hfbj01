@@ -74,7 +74,7 @@ class CheckoutSolutionTest {
     @Test
     public void do_checkout9() {
         Integer response = checkoutSolution.checkout("C");
-        Integer expectedResponse = 15;
+        Integer expectedResponse = 20;
         assertEquals(expectedResponse, response);
     }
 
