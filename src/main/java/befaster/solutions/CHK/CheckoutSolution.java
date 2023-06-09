@@ -37,14 +37,13 @@ public class CheckoutSolution {
                 cost += frequencyMap.get(ch) * 40;
             }
             else if(ch == 'A') {
-                int discountCost = 130, frequencyA = frequencyMap.get(ch);
-                int discount2 = 200;
+                int frequencyA = frequencyMap.get(ch);
 
-                Integer[] response_d1 = applyDiscount(frequencyA, 5, discountCost);
+                Integer[] response_d1 = applyDiscount(frequencyA, 5, 200);
                 cost += response_d1[0];
                 frequencyA = response_d1[1];
 
-                Integer[] response_d2 = applyDiscount(frequencyA, 3, discount2);
+                Integer[] response_d2 = applyDiscount(frequencyA, 3, 130);
                 cost += response_d2[0];
                 frequencyA = response_d2[1];
 
@@ -59,3 +58,4 @@ public class CheckoutSolution {
         return cost;
     }
 }
+
