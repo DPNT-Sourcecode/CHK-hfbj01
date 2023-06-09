@@ -11,7 +11,10 @@ public class CheckoutSolution {
 
     int getCost() {
         int cost = 0;
-        int freeB = 0;
+
+        int frequencyE = frequencyMap.get('E');
+        int freeB = frequencyE / 2;
+
         for(char ch: frequencyMap.keySet()) {
             if(ch == 'D') {
                 cost += frequencyMap.get(ch) * 15;
@@ -20,10 +23,7 @@ public class CheckoutSolution {
                 cost += frequencyMap.get(ch) * 20;
             }
             else if(ch == 'E') {
-                int frequencyE = frequencyMap.get(ch);
-                freeB = frequencyE / 2;
-                System.out.println(freeB);
-                cost += frequencyE * 40;
+                cost += frequencyMap.get(ch) * 40;
             }
             else if(ch == 'A') {
                 int discountCost = 130, frequencyA = frequencyMap.get(ch);
@@ -31,7 +31,6 @@ public class CheckoutSolution {
             }
             else if(ch == 'B') {
                 int discountCost = 45, frequencyB = Math.max(0, frequencyMap.get(ch) - freeB);
-                System.out.println(frequencyB);
                 cost += ((frequencyB / 2) * discountCost) + (frequencyB % 2)*30;
             }
             else return -1;
