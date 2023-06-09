@@ -85,4 +85,11 @@ class CheckoutSolutionTest {
         assertEquals(expectedResponse, response);
     }
 
+    @Test
+    public void do_checkout11() {
+        Integer response = checkoutSolution.checkout("FFF");
+        Integer expectedResponse = 20;
+        assertEquals(expectedResponse, response);
+    }
+
 }
