@@ -7,11 +7,11 @@ import java.util.Map;
 
 public class CheckoutSolution {
 
-    public Integer applyDiscount(int originalFrequency, int offerFrequency, int offerPrice) {
+    public Integer[] applyDiscount(int originalFrequency, int offerFrequency, int offerPrice) {
         int result = 0;
         result += (originalFrequency / offerFrequency) * offerPrice;
         originalFrequency %= offerFrequency;
-        return result;
+        return new Integer[] {result, originalFrequency};
     }
     public Integer checkout(String skus) {
         Map<Character, Integer> frequencyMap = new HashMap<>();
@@ -40,8 +40,13 @@ public class CheckoutSolution {
                 int discountCost = 130, frequencyA = frequencyMap.get(ch);
                 int discount2 = 200;
 
-                applyDiscount(frequencyA, 5, discountCost);
-                applyDiscount(frequencyA, 3, discount2);
+                Integer[] response_d1 = applyDiscount(frequencyA, 5, discountCost);
+                cost += response_d1[0];
+                frequencyA = response_d1[1];
+
+                Integer[] response_d2 = applyDiscount(frequencyA, 3, discount2);
+                cost += response_d2[0];
+                frequencyA = response_d2[1];
 
                 cost += (frequencyA*50);
             }
@@ -54,6 +59,3 @@ public class CheckoutSolution {
         return cost;
     }
 }
-
-
-
