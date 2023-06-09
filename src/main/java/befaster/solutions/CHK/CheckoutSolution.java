@@ -6,13 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CheckoutSolution {
-    public Integer checkout(String skus) {
-        Map<Character, Integer> frequencyMap = new HashMap<>();
-        for(int i=0; i<skus.length(); i++){
-            char ch = skus.charAt(i);
-            frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
-        }
 
+    Map<Character, Integer> frequencyMap = new HashMap<>();
+
+    int getCost() {
         int cost = 0;
         int freeB = 0;
         for(char ch: frequencyMap.keySet()) {
@@ -37,8 +34,16 @@ public class CheckoutSolution {
             }
             else return -1;
         }
-
         return cost;
+    }
+
+    public Integer checkout(String skus) {
+        for(int i=0; i<skus.length(); i++){
+            char ch = skus.charAt(i);
+            frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
+        }
+
+        return getCost();
     }
 }
 
