@@ -2,11 +2,14 @@ package befaster.solutions.CHK;
 
 import befaster.runner.SolutionNotImplementedException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CheckoutSolution {
 
+    List<SKU> skuList;
     public Integer[] applyDiscount(int originalFrequency, int offerFrequency, int offerPrice) {
         int result = 0;
         result += (originalFrequency / offerFrequency) * offerPrice;
@@ -14,6 +17,9 @@ public class CheckoutSolution {
         return new Integer[] {result, originalFrequency};
     }
     public Integer checkout(String skus) {
+
+        skuList = new ArrayList<>();
+        skuList.add(new SKU("A", ))
         Map<Character, Integer> frequencyMap = new HashMap<>();
 
         for(int i=0; i<skus.length(); i++){
@@ -65,3 +71,4 @@ public class CheckoutSolution {
         return cost;
     }
 }
+
