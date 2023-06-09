@@ -12,7 +12,7 @@ public class CheckoutSolution {
     int getCost() {
         int cost = 0;
 
-        int frequencyE = frequencyMap.get('E');
+        int frequencyE = frequencyMap.getOrDefault('E', 0);
         int freeB = frequencyE / 2;
 
         for(char ch: frequencyMap.keySet()) {
@@ -47,4 +47,5 @@ public class CheckoutSolution {
         return getCost();
     }
 }
+
 
