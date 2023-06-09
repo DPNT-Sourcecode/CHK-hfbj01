@@ -19,7 +19,8 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
 
         skuList = new ArrayList<>();
-        skuList.add(new SKU("A", ))
+
+
         Map<Character, Integer> frequencyMap = new HashMap<>();
 
         for(int i=0; i<skus.length(); i++){
@@ -71,4 +72,5 @@ public class CheckoutSolution {
         return cost;
     }
 }
+
 
