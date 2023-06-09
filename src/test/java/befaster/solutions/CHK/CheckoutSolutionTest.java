@@ -32,7 +32,21 @@ class CheckoutSolutionTest {
     @Test
     public void do_checkout3() {
         Integer response = checkoutSolution.checkout("AAAABBCDDA");
-        Integer expectedResponse = 405;
+        Integer expectedResponse = 325;
+        assertEquals(expectedResponse, response);
+    }
+
+    @Test
+    public void do_checkout4() {
+        Integer response = checkoutSolution.checkout("");
+        Integer expectedResponse = 0;
+        assertEquals(expectedResponse, response);
+    }
+
+    @Test
+    public void do_checkout5() {
+        Integer response = checkoutSolution.checkout("AAAABBBCCDDA");
+        Integer expectedResponse = 375;
         assertEquals(expectedResponse, response);
     }
 
